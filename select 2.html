@@ -1,0 +1,31 @@
+<style>
+  /* CSS ile optionların rengini belirleme */
+  select {
+    width: 200px; /* Açılır listenin genişliği */
+    padding: 5px;
+    font-size: 16px;
+  }
+</style>
+
+<form>
+  <label for="renkler">En sevdiğiniz rengi seçin:</label>
+  <select id="renkler" onchange="showColor()">
+    <optgroup label="Sıcak Renkler">
+      <option value="kırmızı">Kırmızı</option>
+      <option value="turuncu">Turuncu</option>
+      <option value="sarı">Sarı</option>
+    </optgroup>
+    <optgroup label="Soğuk Renkler">
+      <option value="mavi">Mavi</option>
+      <option value="yeşil">Yeşil</option>
+      <option value="mor">Mor</option>
+    </optgroup>
+  </select>
+</form>
+
+<script>
+  function showColor() {
+    var selectedColor = document.getElementById("renkler").value;
+    document.getElementById("renkler").style.color = selectedColor;
+  }
+</script>

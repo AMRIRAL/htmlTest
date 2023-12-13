@@ -1,0 +1,19 @@
+<button onclick="openFullscreen()">Tam Ekran</button>
+<iframe src="https://www.google.com?igu=1" width="500" height="300"></iframe>
+<script>
+function openFullscreen() {
+  var elem = document.getElementById("myIframe");
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+
+
+-<iframe src="https://maps.google.com?igu=1" width="500" height="300"></iframe>

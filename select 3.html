@@ -1,0 +1,36 @@
+<style>
+  /* CSS ile optionların rengini belirleme */
+  select {
+    width: 200px; /* Açılır listenin genişliği */
+    padding: 5px;
+    font-size: 16px;
+    color: black; /* Açılır listenin varsayılan rengi */
+  }
+</style>
+
+<form>
+  <label for="renkler">En sevdiğiniz rengi seçin:</label>
+  <select id="renkler" onchange="changeColor()">
+    <optgroup label="Sıcak Renkler">
+      <option style="color: red;" value="kırmızı">Kırmızı</option>
+      <option style="color: orange;" value="turuncu">Turuncu</option>
+      <option style="color: yellow;" value="sarı">Sarı</option>
+    </optgroup>
+    <optgroup label="Soğuk Renkler">
+      <option style="color: blue;" value="mavi">Mavi</option>
+      <option style="color: green;" value="yeşil">Yeşil</option>
+      <option style="color: purple;" value="mor">Mor</option>
+    </optgroup>
+  </select>
+</form>
+
+<script>
+  function changeColor() {
+    var selectedColor = document.getElementById("renkler").value;
+    document.getElementById("renkler").style.color = selectedColor;
+    var options = document.getElementById("renkler").getElementsByTagName("option");
+    for (var i = 0; i < options.length; i++) {
+      options[i].style.color = options[i].getAttribute("value");
+    }
+  }
+</script>

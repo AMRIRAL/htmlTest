@@ -1,0 +1,65 @@
+<html>
+
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style type="text/css">
+        .page-title {
+            color: green;
+        }
+
+        p {
+            text-indent: 2em;
+            font-family: arial;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="page-title"> Gömülü stil kullanimi</h1>
+
+    <p>Gömülü Stil kullanimi çok önemli bir ayardir</p>
+    <p>bu açidan yeni baslayanlar için önemlidir.</p>
+
+</body>
+
+</html>
+Görünüşe göre fark, sizin kodunuzda paragrafların rengini belirten stil tanımı .page-content p seçicisiydi. Önerdiğim kodda ise paragraflar için doğrudan p etiketi kullanılarak renk belirtilmişti.
+
+Eğer .page-content p tanımını kullanarak belirttiğiniz renkleri görmek istiyorsanız, onu doğrudan kendi kodunuza ekleyebilirsiniz. Böylelikle paragrafların rengini belirtmiş olursunuz:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style type="text/css">
+        .page-title {
+            color: green;
+        }
+
+        .page-content p {
+            text-indent: 2em;
+            font-family: arial;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="page-title"> Gömülü stil kullanimi</h1>
+
+    <div class="page-content">
+        <p>Gömülü Stil kullanimi çok önemli bir ayardir</p>
+        <p>bu açidan yeni baslayanlar için önemlidir.</p>
+    </div>
+
+</body>
+
+</html>

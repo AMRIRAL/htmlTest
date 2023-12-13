@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Videolarda Stil Kullanımı</title>
+  <style>
+    video {
+      /* video kenarlığı */
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 20px;
+      /* Geçişli renklerin ayarlanması */
+      -moz-transition: all 1s ease-in-out;
+      -webkit-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      -ms-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+    }
+
+    /* zemin rengi ve renk geçişleri */
+    video, #start, #stop, #pause, #plus, #minus, #mute {
+      /* background color */
+      background-color: #ffcccc;
+      /* background gradient */
+      background-image: linear-gradient(top, #fff, #fcc);
+      background-image: -moz-linear-gradient(top, #fff, #fcc);
+      background-image: -webkit-linear-gradient(top, #fff, #fcc);
+      background-image: -o-linear-gradient(top, #fff, #fcc);
+      background-image: -ms-linear-gradient(top, #fff, #fcc);
+      /* Gölgeler kontrollerde */
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    video:hover, video:focus, #start:hover, #stop:hover, #pause:hover, #plus:hover, #minus:hover, #mute:hover {
+      /* glow */
+      box-shadow: 0 0 20px #f88;
+    }
+
+    #controls {
+      display: none;
+      margin: 10px 30px;
+      /* Başlangıç büyüklüğü */
+      height: 20px;
+      width: 0;
+    }
+  </style>
+</head>
+<body>
+  <video width="400" height="380" poster="efetatil.jpg" controls>
+    <source src="videolar/film1.mp4" />
+  </video>
+</body>
+</html>

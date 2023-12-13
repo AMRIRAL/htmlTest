@@ -1,0 +1,28 @@
+<form id="keygen-form">
+  Kullanıcı Adı: <input type="text" id="username" placeholder="Kullanıcı Adı"> <br>
+  <input type="button" value="Anahtarları Oluştur" onclick="generateKeys()">
+</form>
+
+<p>Özel Anahtar:</p>
+<textarea id="privateKey" rows="5" cols="50" readonly></textarea>
+
+<p>Açık Anahtar:</p>
+<textarea id="publicKey" rows="5" cols="50" readonly></textarea>
+
+<script>
+function generateKeys() {
+  const username = document.getElementById('username').value;
+  const publicKeyField = document.getElementById('publicKey');
+  const privateKeyField = document.getElementById('privateKey');
+
+  // Burada kriptografik işlemler kullanılarak gerçek bir anahtar çifti oluşturulabilir.
+  // Ancak HTML üzerinde bu işlemler doğrudan yapılamaz, JavaScript veya sunucu tarafı kodlamaya ihtiyaç vardır.
+
+  // Örnek olarak sabit bir anahtar çifti oluşturulduğunu varsayalım:
+  const publicKey = 'Örnek Açık Anahtar';
+  const privateKey = 'Örnek Özel Anahtar';
+
+  publicKeyField.value = publicKey;
+  privateKeyField.value = privateKey;
+}
+</script>

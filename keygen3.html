@@ -1,0 +1,11 @@
+<form id="keygen-form">
+  Kullanıcı Adı: <input type="text" id="username" placeholder="Kullanıcı Adı"> <br>
+  <keygen id="keygen" name="mykey">
+  <input type="button" value="Anahtarları Oluştur" onclick="generateKeys()">
+</form>
+
+<p>Özel Anahtar:</p>
+<textarea id="privateKey" rows="5" cols="50" readonly></textarea>
+
+<p>Açık Anahtar:</p>
+<textarea id="publicKey" rows="5" cols="50" readonly></textarea>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ilerleme Cubugu Ornegi</title>
+</head>
+<body>
+
+<h1>İlerleme Çubuğu Örneği</h1>
+
+<label for="file">Dosya İndirme:</label>
+<progress id="file" value="0" max="100"> %0 </progress>
+
+<script>
+  // JavaScript ile ilerleme çubuğunu her 10% artırma
+  const progressBar = document.getElementById('file');
+  let progressValue = 0;
+
+  function increaseProgress() {
+    if (progressValue <= 90) {
+      progressValue += 10;
+      progressBar.value = progressValue;
+      progressBar.innerHTML = `%${progressValue}`;
+    }
+  }
+
+  // Her saniyede bir ilerleme sağlamak için setInterval kullanıyoruz.
+  setInterval(increaseProgress, 1000);
+</script>
+
+</body>
+</html>

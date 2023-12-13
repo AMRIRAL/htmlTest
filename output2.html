@@ -1,0 +1,23 @@
+<form oninput="calculate()">
+  <input type="number" id="x" name="x" placeholder="Bir rakkam girin">
+  <span> * </span>
+  <input type="number" id="y" name="y" placeholder="ikinci bir rakkam girin">
+  <span> / </span>
+  <input type="number" id="z" name="z" placeholder="bölüm rakkamını girin">
+  <span> = </span>
+  <output id="result" for="x y z"></output>
+</form>
+
+<script>
+  function calculate() {
+    var x = parseInt(document.getElementById('x').value);
+    var y = parseInt(document.getElementById('y').value);
+    var z = parseInt(document.getElementById('z').value);
+
+    var total = (x * y) / z;
+
+    var formattedResult = total.toLocaleString(); // Sayıyı biçimlendir
+
+    document.getElementById('result').innerHTML = formattedResult; // Sonucu ekrana yazdır
+  }
+</script>

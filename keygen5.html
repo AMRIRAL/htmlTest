@@ -1,0 +1,38 @@
+<form id="keygen-form">
+  Kullanıcı Adı: <input type="text" id="username" placeholder="Kullanıcı Adı"> <br>
+  <input type="button" value="Anahtarları Oluştur" onclick="generateKeys()">
+</form>
+
+<p>Özel Anahtar:</p>
+<textarea id="privateKey" rows="5" cols="50" readonly></textarea>
+
+<p>Açık Anahtar:</p>
+<textarea id="publicKey" rows="5" cols="50" readonly></textarea>
+
+<script>
+function generateKeys() {
+  const username = document.getElementById('username').value;
+  const publicKeyField = document.getElementById('publicKey');
+  const privateKeyField = document.getElementById('privateKey');
+
+  // Kriptografik işlemlerle gerçek bir anahtar çifti oluşturulabilir
+  window.crypto.subtle.generateKey(
+    {
+      name: "RSA-OAEP",
+      modulusLength: 2048,
+      publicExponent: new Uint8Array([1, 0, 1]),
+      hash: "SHA-256"
+    },
+    true,
+    ["encrypt", "decrypt"]
+  ).then(function (key) {
+    window.crypto.subtle.exportKey("spki", key.publicKey).then(function (exportedPublicKey) {
+      publicKeyField.value = new TextDecoder().decode(exportedPublicKey);
+    });
+
+    window.crypto.subtle.exportKey("pkcs8", key.privateKey).then(function (exportedPrivateKey) {
+      privateKeyField.value = new TextDecoder().decode(exportedPrivateKey);
+    });
+  });
+}
+</script>

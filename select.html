@@ -1,0 +1,58 @@
+<style>
+  /* CSS ile optionların rengini belirleme */
+  select {
+    width: 200px; /* Açılır listenin genişliği */
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  option.red {
+    color: red; /* Kırmızı renk */
+  }
+
+  option.orange {
+    color: orange; /* Turuncu renk */
+  }
+
+  option.yellow {
+    color: yellow; /* Sarı renk */
+  }
+
+  option.blue {
+    color: blue; /* Mavi renk */
+  }
+
+  option.green {
+    color: green; /* Yeşil renk */
+  }
+
+  option.purple {
+    color: purple; /* Mor renk */
+  }
+</style>
+
+<form>
+<fieldset>
+<legend>Renkler</legend>  
+<label for="renkler">En sevdiğiniz renk nedir?</label>
+  <select id="renkler" onchange="showColor()">
+    <optgroup label="Sıcak Renkler">
+      <option class="red" value="kırmızı">Kırmızı</option>
+      <option class="orange" value="turuncu">Turuncu</option>
+      <option class="yellow" value="sarı">Sarı</option>
+    </optgroup>
+    <optgroup label="Soğuk Renkler">
+      <option class="blue" value="mavi">Mavi</option>
+      <option class="green" value="yeşil">Yeşil</option>
+      <option class="purple" value="mor">Mor</option>
+    </optgroup>>
+  </select>
+</fieldset>
+</form>
+
+<script>
+  function showColor() {
+    var selectedColor = document.getElementById("renkler").value;
+    document.getElementById("renkler").style.color = selectedColor;
+  }
+</script>
